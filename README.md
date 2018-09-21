@@ -1,2 +1,2 @@
-# MyMails-JQuery
-Version de l'application MyMails avec la bibliothèque JQuery
+# my-mails
+Application MyMails de La Capsule

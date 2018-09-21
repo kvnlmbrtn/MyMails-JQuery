@@ -1,0 +1,471 @@
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme de l'arrière plan du site en grisé */
+
+body {
+  font-family: 'Montserrat';
+  margin: 3em auto 3em auto;
+  background-image: url("whitenoise.png"), linear-gradient(45deg, #efdec6, #cad8d2, #97c2c1, #9abcdd, #697fa3);
+}
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme du header */
+
+#bannerNavigation {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /*position: relative;*/
+  width: 75%;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px #dedede solid;
+}
+
+
+      .fixedPosition {
+        display: block;
+  		  position: fixed;
+  		  top: 0;
+        left: 12.5%;
+  		  z-index: 5;
+        background-image: url("whitenoise.png"), linear-gradient(90deg, #8e8e8e, #dedede);
+      }
+
+
+
+
+/* Mise en forme du bouton d'ajout d'un message */
+
+  #addNewMessage {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 20%;
+    min-width: 130px;
+    height: 40px;
+    margin: auto 2em auto 2em;
+    border-radius: 30px;
+    background: white;
+    border: 1px #dedede solid;
+  }
+
+
+    #addNewMessage .fas {
+      margin: auto 1em auto 0;
+    }
+
+    #addNewMessage:hover {
+      box-shadow: 2px 2px 2px  #dedede;
+    }
+
+
+      #textAdd,
+      #logoAdd {
+        font-size: 1em;
+        color: #9c47fc;
+        display: block;
+        font-weight: bold;
+
+        background: -webkit-linear-gradient(45deg, #009FFF, #ec2F4B);
+        background: -moz-linear-gradient(#009FFF, #ec2F4B);
+        background: -ms-linear-gradient(#009FFF, #ec2F4B);
+        background: -o-linear-gradient(#009FFF, #ec2F4B);
+        background: linear-gradient(#009FFF, #ec2F4B);
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -ms-background-clip: text;
+        -o-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+      #logoAdd {
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        -moz-transition: all 0.2s ease-in-out 0s;
+        -ms-transition: all 0.2s ease-in-out 0s;
+        -o-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+
+        /*transition: font-size 0.05s ease;
+        transform : rotate(90deg);*/
+      }
+
+      #logoAdd:hover {
+        -webkit-transform: rotate(90deg) scale(1.3);
+        -moz-transform: rotate(90deg) scale(1.30);
+        -ms-transform: rotate(90deg) scale(1.30);
+        -o-transform: rotate(90deg) scale(1.30);
+        transform: rotate(90deg) scale(1.30);
+
+        /*font-size: 1.2em;*/
+      }
+
+
+      #searchMessage {
+        display: none; /* Attention à faire ré-apparaître cette div */
+      }
+
+
+/* Mise en forme du compteur de messages */
+
+    #counterOfMessages {
+      display: block;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      width: 20%;
+      height: 40px;
+      min-width: 130px;
+      margin: auto 2em auto 2em;
+      border-radius: 30px;
+      background: white;
+      border: 1px #dedede solid;
+    }
+
+      #counterOfMessages h2,
+      #numberOfMessages {
+        font-size: 1em;
+        color: #9c47fc;
+        display: block;
+        font-weight: bold;
+        margin-right: 0.3em;
+        margin-left: 0.3em;
+
+        background: linear-gradient(#009FFF, #ec2F4B);
+
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -ms-background-clip: text;
+        -o-background-clip: text;
+        background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        -ms-text-fill-color: transparent;
+        -o-text-fill-color: transparent;
+        text-fill-color: transparent;
+      }
+
+
+      #counterOfMessages:hover {
+        box-shadow: 2px 2px 2px  #dedede;
+      }
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Gestion de la boite de dialogue pour ajouter un nouveau message */
+
+    #formAddNewContact {
+      display: none;  /* Div à modifier pour cacher et animer en JS */
+      position: relative;
+      width: 70%;
+      min-width: 130px;
+      margin: 2em auto 2em auto;
+      padding: 1em 1em 1em 1em;
+      border-radius: 30px;
+      background: white;
+      border: 1px #dedede solid;
+    }
+
+    #headerAddNewMessage {
+      text-align: right;
+      margin-right: 1.5em;
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #eaa267;
+      font-weight: 300;
+    }
+
+      #headerAddNewMessage i:hover {
+        cursor: pointer;
+        color: #ad2626;
+        font-weight: 700;
+      }
+
+
+            [placeholder] {
+          		opacity: 0.6;
+          	}
+
+            input[type="text"] {
+        			display: block;
+        			height: 2em;
+        			line-height: 2em;
+        			margin: 1em auto 1em auto;
+        			font-size: 0.9em;
+        			font-family: 'Montserrat', sans-serif;
+        			color: inherit;
+        			width: 50%;
+        			border: none;
+        			background: transparent;
+        			border-bottom: solid 1px #c9c9c9;
+        			outline: 0;
+        			padding: 0;
+        			text-decoration: none;
+        		}
+
+        			input[type="text"]:focus {
+        				border-bottom: 2px #ad2626 solid;
+        			}
+
+        		textarea {
+        			display: block;
+        			height: 5em;
+        			line-height: 1em;
+        			margin: 3em auto 2em auto;
+        			font-size: 0.9em;
+        			font-family: 'Montserrat', sans-serif;
+        			color: inherit;
+        			width: 50%;
+        			border: none;
+        			background: transparent;
+        			border-bottom: solid 1px #c9c9c9;
+        			outline: 0;
+        			padding: 0;
+        			text-decoration: none;
+        		}
+
+        			textarea:focus {
+        				border-bottom: 2px #ad2626 solid;
+        			}
+
+              button,
+              input[type="reset"] {
+                display: block;
+                position: relative;
+                width: 20%;
+                min-width: 120px;
+                margin: 1em auto 1em auto;
+                font-family: inherit;
+                font-size: 1em;
+                line-height: 1.2em;
+                height: 30px;
+                border-radius: 30px;
+                background-color: white;
+                color: #ad2626;
+                border: 1px #ad2626 solid;
+              }
+
+                button:hover,
+                input[type="reset"]:hover {
+                  color: white;
+                  background-color: #ad2626;
+                  border: none;
+                  cursor: pointer;
+                }
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Insertion d'un page wrapper pour contenir nos profils */
+
+#pageWrapper {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+}
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Insertion d'une transition au clic sur les logos poubelle */
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+  a:hover {
+    text-decoration: none;
+    color: #8e8e8e;
+  }
+
+
+
+/*------------------------------------------------------------------------------
+------------------------------------------------------------------------------*/
+
+/* Mise en forme des blocs profils */
+
+
+.profileBlocks {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 1em 1em 1em 1em;
+  border: 1px #dedede solid;
+  border-radius: 30px;
+  background: white;
+  margin-top: 0.5em;
+}
+
+.trashLogo {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-sizing: content-box;
+}
+
+  .trashLogo:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+
+.profilePictures {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+
+  position: relative;
+
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  border: 1px solid #dedede;
+}
+
+
+  #profilePicture1 {
+    background-image: url("avatar-1.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture2 {
+    background-image: url("avatar-2.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture3 {
+    background-image: url("avatar-3.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture4 {
+    background-image: url("avatar-4.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture5 {
+    background-image: url("avatar-5.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture6 {
+    background-image: url("avatar-1.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture7 {
+    background-image: url("avatar-2.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture8 {
+    background-image: url("avatar-3.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture9 {
+    background-image: url("avatar-4.jpg");
+    background-size: cover;
+  }
+
+  #profilePicture10 {
+    background-image: url("avatar-5.jpg");
+    background-size: cover;
+  }
+
+
+.contentBlocks {
+  display: block;
+  position: relative;
+  margin: auto 2em auto 2em;
+  text-align: left;
+  width: 450px;
+}
+
+    .contentBlocks .recipient {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .contentBlocks .messageContent {
+      font-size: 1em;
+      color: #8e8e8e;
+    }
+
+
+
+    @media screen and (max-width: 860px) {
+
+      .profileBlocks {
+        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .contentBlocks {
+        text-align: center;
+        display: block;
+        position: relative;
+        width: 90%;
+
+      }
+
+    }
